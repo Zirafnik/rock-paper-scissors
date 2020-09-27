@@ -15,8 +15,8 @@ function playRound(playerSelection, computerSelection) {
     let computer= computerSelection.toLowerCase();
 
     let child2= document.createElement('span');
-    child2.textContent=player + "\r\n";
-    child2.textContent+=computer;
+    child2.textContent='player: ' + player + "\r\n";
+    child2.textContent+='computer: ' + computer;
     log.appendChild(child2);
 
     if(player==computer) {
@@ -37,7 +37,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-let numberOfWins=prompt("Choose the number of wins:", 5);
+//let numberOfWins=prompt("Choose the number of wins:", 5);
+let numberOfWins;
+getInputValue();
 
 let playerScore=0;
 let computerScore=0;
@@ -97,4 +99,11 @@ function resetGame() {
 
     playerScore=0;
     computerScore=0;
+}
+
+const inputSubmit= document.querySelector('#inputSubmit');
+inputSubmit.addEventListener('click', getInputValue);
+
+function getInputValue() {
+    numberOfWins=document.querySelector('input').value;
 }
