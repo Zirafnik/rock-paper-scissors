@@ -83,8 +83,6 @@ function play(e) {
         playerScore=0;
         computerScore=0;
 
-
-        console.log(`${playerScore}:${computerScore}`);
     }
 }
 
