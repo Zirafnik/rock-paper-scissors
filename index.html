@@ -2,27 +2,29 @@
 <html>
     <head>
         <title>Rock, Paper, Scissors!</title>
+
+        <link href="css/reset.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>ROCK, PAPER, SCISSORS!</h1>
-        <div>
+        <h1 id="title">ROCK, PAPER, SCISSORS!</h1>
+        <div id="textInput">
             <label for="input">How many wins to play for:</label>
             <input id="input" type="text" placeholder="number" value="5">
             <button id="inputSubmit">Update</button>
         </div>
 
-        <div>
+        <div id="choiceButtons">
             <button id="rock" class="btn">Rock</button>
             <button id="paper" class="btn">Paper</button>
             <button id="scissors" class="btn">Scissors</button>
         </div>
 
-        <div>
+        <div id="clearButton">
             <button id="reset">Clear</button>
         </div>
 
-        <div>
+        <div id="logDisplay">
             <h2>LOG:</h2>
             <div id="log"></div>
         </div>
