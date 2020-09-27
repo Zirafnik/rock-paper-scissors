@@ -14,41 +14,45 @@ function playRound(playerSelection, computerSelection) {
     let player= playerSelection.toLowerCase();
     let computer= computerSelection.toLowerCase();
 
-    console.log(player);
-    console.log(computer);
+    let child2= document.createElement('span');
+    child2.textContent=player + "\r\n";
+    child2.textContent+=computer;
+    log.appendChild(child2);
 
     if(player==computer) {
         return "Tie!";
     } else if(player=="rock" && computer=="paper") {
-        return "You Lose! Paper beats Rock";
+        return "You Lose! Paper beats Rock.";
     } else if(player=="rock" && computer=="scissors") {
-        return "You Win! Rock beats Scissors";
+        return "You Win! Rock beats Scissors.";
     } else if(player=="paper" && computer=="scissors") {
-        return "You Lose! Scissors beat Paper";
+        return "You Lose! Scissors beat Paper.";
     } else if(player=="paper" && computer=="rock") {
-        return "You Win! Paper beats Rock";
+        return "You Win! Paper beats Rock.";
     } else if(player=="scissors" && computer=="rock") {
-        return "You Lose! Rock beats Scissors";
+        return "You Lose! Rock beats Scissors.";
     } else if(player=="scissors" && computer=="paper") {
-        return "You Win! Scissors beat Paper";
+        return "You Win! Scissors beat Paper.";
     }
 }
 
 
 let numberOfWins=prompt("Choose the number of wins:", 5);
 
-const buttons= document.querySelectorAll('button');
-
-buttons.forEach(button => button.addEventListener('click', play));
-
 let playerScore=0;
 let computerScore=0;
 
+const buttons= document.querySelectorAll('.btn');
+buttons.forEach(button => button.addEventListener('click', play));
+
+const log= document.querySelector('#log');
+
 function play(e) {
     let computerRoll=computerPlay();
+    let child= document.createElement('span');
 
     let result=playRound(e.target.id, computerRoll);
-    console.log(result);
+    child.textContent=result + "\r\n";
 
     if(/Win/.test(result)) {
         playerScore+=1;
@@ -56,22 +60,41 @@ function play(e) {
         computerScore+=1;
     }
 
-    console.log(`${playerScore}:${computerScore}`);
+    
+    child.textContent+=`${playerScore}:${computerScore}`;
+    log.appendChild(child);
+
+    let msgEnd;
 
     if(playerScore==numberOfWins || computerScore==numberOfWins) {
         if(playerScore>computerScore) {
-            console.log("YOU WIN");
+            msgEnd="YOU WIN\r\n";
         } else if(playerScore<computerScore) {
-            console.log("YOU LOSE");
+            msgEnd="YOU LOSE\r\n";
         } else if(playerScore==computerScore) {
-            console.log("TIE");
+            msgEnd="TIE\r\n";
         }
         
-        console.log(`${playerScore}:${computerScore}`);
+        msgEnd+=`${playerScore}:${computerScore}`;
+        alert(msgEnd);
 
         playerScore=0;
         computerScore=0;
 
+
         console.log(`${playerScore}:${computerScore}`);
     }
+}
+
+const reset= document.querySelector('#reset');
+reset.addEventListener('click', resetGame);
+
+function resetGame() {
+    const spans= document.querySelectorAll('span');
+    spans.forEach(span => {
+        log.removeChild(span);
+    });
+
+    playerScore=0;
+    computerScore=0;
 }

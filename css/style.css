@@ -1,0 +1,7 @@
+
+
+#log {
+    display: flex;
+    flex-direction: column;
+    white-space: pre;  /*this helps break the lines in .textContent with \r\n */
+}
