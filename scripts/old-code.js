@@ -34,44 +34,32 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function game(numberOfRounds) {
+    let playerScore=0;
+    let computerScore=0;
 
-let numberOfWins=prompt("Choose the number of wins:", 5);
+    for(let i=0; i<numberOfRounds; i++) {
+        let result=playRound(prompt("Type (rock, paper, scissors)"), computerPlay());
+        console.log(result);
 
-const buttons= document.querySelectorAll('button');
+        if(/Win/.test(result)) {
+            playerScore+=1;
+        } else if(/Lose/.test(result) || result==undefined){
+            computerScore+=1;
+        }
 
-buttons.forEach(button => button.addEventListener('click', play));
+        console.log(`${playerScore}:${computerScore}`);
+    }
 
-let playerScore=0;
-let computerScore=0;
-
-function play(e) {
-    let computerRoll=computerPlay();
-
-    let result=playRound(e.target.id, computerRoll);
-    console.log(result);
-
-    if(/Win/.test(result)) {
-        playerScore+=1;
-    } else if(/Lose/.test(result) || result==undefined){
-        computerScore+=1;
+    if(playerScore>computerScore) {
+        console.log("YOU WIN");
+    } else if(playerScore<computerScore) {
+        console.log("YOU LOSE");
+    } else if(playerScore==computerScore) {
+        console.log("TIE");
     }
 
     console.log(`${playerScore}:${computerScore}`);
-
-    if(playerScore==numberOfWins || computerScore==numberOfWins) {
-        if(playerScore>computerScore) {
-            console.log("YOU WIN");
-        } else if(playerScore<computerScore) {
-            console.log("YOU LOSE");
-        } else if(playerScore==computerScore) {
-            console.log("TIE");
-        }
-        
-        console.log(`${playerScore}:${computerScore}`);
-
-        playerScore=0;
-        computerScore=0;
-
-        console.log(`${playerScore}:${computerScore}`);
-    }
 }
+
+game(prompt("Choose the number of rounds", 5));
