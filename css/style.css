@@ -79,3 +79,27 @@ h2 {
     overflow-y: auto; 
     text-align:justify; 
 }
+
+#rock {
+    height: 150px;
+    width: 150px;
+
+    background-image: url(/images/asteroid.png);
+    background-size: 100%;
+}
+
+#paper {
+    height: 150px;
+    width: 150px;
+
+    background-image: url(/images/document.png);
+    background-size: 100%;
+}
+
+#scissors {
+    height: 150px;
+    width: 150px;
+    
+    background-image: url(/images/scissors.png);
+    background-size: 100%;
+}
