@@ -51,6 +51,12 @@ body {
     grid-area: log;
 
     background-color: gray;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 h2 {
@@ -63,4 +69,13 @@ h2 {
     white-space: pre;  /*this helps break the lines in .textContent with \r\n */
 
     background-color: gainsboro;
+
+    /*this makes it scrollable*/
+    margin:4px, 4px; 
+    padding:4px; 
+    width: 80%; 
+    height: 80%; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    text-align:justify; 
 }

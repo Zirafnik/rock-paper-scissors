@@ -66,6 +66,9 @@ function play(e) {
     child.textContent+=`${playerScore}:${computerScore}`;
     log.appendChild(child);
 
+    //scrolls to last played round (to the bottom)
+    log.lastChild.scrollIntoView(); 
+
     let msgEnd;
 
     if(playerScore==numberOfWins || computerScore==numberOfWins) {
