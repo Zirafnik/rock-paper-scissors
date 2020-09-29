@@ -237,3 +237,30 @@ span {
 
     border-radius: 30%;
 }
+
+#footer {
+    grid-area: footer;
+    align-self: flex-end;
+
+    margin: 10px;
+}
+
+#footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+#footer-text {
+    font-family: 'Strait', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#github-image {
+    height: 28px;
+    width: 28px;
+
+    margin-top: 6px;
+}
