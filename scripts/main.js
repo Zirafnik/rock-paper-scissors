@@ -15,6 +15,8 @@ function playRound(playerSelection, computerSelection) {
     let computer= computerSelection.toLowerCase();
 
     let child2= document.createElement('span');
+    child2.classList.add('child-new');
+
     child2.textContent=`ROUND ${roundCounter}` + '\r\n';
     child2.textContent+='player: ' + player + "\r\n";
     child2.textContent+='computer: ' + computer;
@@ -55,6 +57,7 @@ const log= document.querySelector('#log');
 function play(e) {
     let computerRoll=computerPlay();
     let child= document.createElement('span');
+    child.classList.add('child-new');
 
     let result=playRound(e.target.id, computerRoll);
     child.textContent=result + "\r\n";
@@ -68,14 +71,22 @@ function play(e) {
     }
 
     
-    child.textContent+=`${playerScore}:${computerScore}`;
+    child.textContent+=`${playerScore}:${computerScore}` + '\r\n' + ' ';
     log.appendChild(child);
 
     //scrolls to last played round (to the bottom)
     log.lastChild.scrollIntoView(); 
 
-    let msgEnd;
+    let nodelist=log.querySelectorAll('.child-new');
+    if(nodelist.length>2) {
+        nodelist[0].classList.toggle('child-new');
+        nodelist[1].classList.toggle('child-new');
+        
+        //nodelist[0].classList.add('child-old');
+        //nodelist[1].classList.add('child-old');
+    }
 
+    let msgEnd;
     if(playerScore==numberOfWins || computerScore==numberOfWins) {
         if(playerScore>computerScore) {
             msgEnd="YOU WIN\r\n";
@@ -92,7 +103,6 @@ function play(e) {
         computerScore=0;
 
         roundCounter=1;
-
     }
 }
 

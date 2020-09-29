@@ -52,6 +52,8 @@ body {
     height: 70px;
     width: 200px;
 
+    border-radius: 10px;
+
     font-size: larger;
 }
 
@@ -94,6 +96,14 @@ h2 {
     overflow-x: hidden; 
     overflow-y: auto; 
     text-align:justify; 
+}
+
+.child-old {
+    background-color: blue;
+}
+
+.child-new {
+    background-color: orange;
 }
 
 #rock {
