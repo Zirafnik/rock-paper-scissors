@@ -42,20 +42,40 @@ function playRound(playerSelection, computerSelection) {
 
 //let numberOfWins=prompt("Choose the number of wins:", 5);
 let numberOfWins;
+const inputSubmit= document.querySelector('#inputSubmit');
+inputSubmit.addEventListener('click', getInputValue);
+
+function getInputValue() {
+    numberOfWins=document.querySelector('input').value;
+}
+
 getInputValue();
 
+//global counters
 let playerScore=0;
 let computerScore=0;
 
 let roundCounter=1;
+let gameCounter=1;
+
+const log= document.querySelector('#log');
+
+
+function addGameCounter() {
+    const game=document.createElement('span');
+    game.textContent='GAME #' + gameCounter + '\r\n' + ' ';
+    log.appendChild(game);
+}
+
+addGameCounter();
+
 
 const buttons= document.querySelectorAll('.btn');
 buttons.forEach(button => button.addEventListener('click', play));
 
-const log= document.querySelector('#log');
-
 function play(e) {
     let computerRoll=computerPlay();
+
     let child= document.createElement('span');
     child.classList.add('child-new');
 
@@ -81,9 +101,6 @@ function play(e) {
     if(nodelist.length>2) {
         nodelist[0].classList.toggle('child-new');
         nodelist[1].classList.toggle('child-new');
-        
-        //nodelist[0].classList.add('child-old');
-        //nodelist[1].classList.add('child-old');
     }
 
     let msgEnd;
@@ -103,9 +120,12 @@ function play(e) {
         computerScore=0;
 
         roundCounter=1;
+        gameCounter+=1;
+        addGameCounter();
     }
 }
 
+//clear button
 const reset= document.querySelector('#clear');
 reset.addEventListener('click', resetGame);
 
@@ -119,11 +139,6 @@ function resetGame() {
     computerScore=0;
 
     roundCounter=1;
-}
-
-const inputSubmit= document.querySelector('#inputSubmit');
-inputSubmit.addEventListener('click', getInputValue);
-
-function getInputValue() {
-    numberOfWins=document.querySelector('input').value;
+    gameCounter=1;
+    addGameCounter();
 }
