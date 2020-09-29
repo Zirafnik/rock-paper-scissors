@@ -89,7 +89,7 @@ function play(e) {
     }
 }
 
-const reset= document.querySelector('#reset');
+const reset= document.querySelector('#clear');
 reset.addEventListener('click', resetGame);
 
 function resetGame() {
