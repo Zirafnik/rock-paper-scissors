@@ -16,8 +16,9 @@ function playRound(playerSelection, computerSelection) {
 
     let child2= document.createElement('span');
     child2.classList.add('child-new');
+    child2.setAttribute('id', 'child2');
 
-    child2.textContent=`ROUND ${roundCounter}` + '\r\n';
+    child2.textContent=`\r\nROUND ${roundCounter}` + '\r\n';
     child2.textContent+='player: ' + player + "\r\n";
     child2.textContent+='computer: ' + computer;
     log.appendChild(child2);
@@ -63,7 +64,8 @@ const log= document.querySelector('#log');
 
 function addGameCounter() {
     const game=document.createElement('span');
-    game.textContent='GAME #' + gameCounter + '\r\n' + ' ';
+    game.setAttribute('id', 'gameCounter');
+    game.textContent='GAME #' + gameCounter;
     log.appendChild(game);
 }
 
@@ -78,6 +80,7 @@ function play(e) {
 
     let child= document.createElement('span');
     child.classList.add('child-new');
+    child.setAttribute('id', 'child');
 
     let result=playRound(e.target.id, computerRoll);
     child.textContent=result + "\r\n";
@@ -89,7 +92,6 @@ function play(e) {
     } else if(/Lose/.test(result) || result==undefined){
         computerScore+=1;
     }
-
     
     child.textContent+=`${playerScore}:${computerScore}` + '\r\n' + ' ';
     log.appendChild(child);

@@ -17,6 +17,21 @@ body {
     "footer footer footer footer";
 }
 
+button {
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-family: 'Strait', sans-serif;
+    font-size: 60px;
+}
+
 #title {
     grid-area: header;
 
@@ -24,12 +39,45 @@ body {
     align-self: center;
 }
 
-#textInput {
+#textInputDiv {
     grid-area: input;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#input-text {
+    font-family: 'Strait', sans-serif;
+    font-size: 30px;
+}
+
+#input {
+    width: 2em;
+    
+    
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+
+    font-family: 'Strait', sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+
+    margin: 8px;
+}
+
+#inputSubmit {
+    height: 50px;
+    width: 120px;
+
+    border-radius: 10px;
+
+    font-family: 'Strait', sans-serif;
+    font-size: 28px;
+    color: black;
 }
 
 #choiceButtons {
@@ -54,7 +102,9 @@ body {
 
     border-radius: 10px;
 
-    font-size: larger;
+    font-family: 'Strait', sans-serif;
+    font-size: 40px;
+    color: black;
 }
 
 #logDisplay {
@@ -68,34 +118,68 @@ body {
     align-items: center;
 
     border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
 
     margin-right: 25px;
 }
 
 h2 {
+    font-family: 'Strait', sans-serif;
+    font-size: 40px;
+
     text-align: center;
+    background-color: gainsboro;
+    padding: 10px;
+    width: 77%;
+    
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+
+    margin-top: 30px;
 }
 
 #log {
     display: flex;
     flex-direction: column;
-    white-space: pre;  /*this helps break the lines in .textContent with \r\n */
 
     margin: 40px 40px;
     margin-top: 0px;
 
     border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
 
     background-color: gainsboro;
 
     /*this makes it scrollable*/
     /*margin:4px, 4px; */
     padding:4px; 
+
     width: 80%; 
     height: 90%; 
     overflow-x: hidden; 
     overflow-y: auto; 
     text-align:justify; 
+}
+
+span {
+    text-align: center;
+    white-space: pre; /*this helps break the lines in .textContent with \r\n */
+
+    font-family: 'Strait', sans-serif;
+    font-size: larger;
+    color: black;
+}
+
+#child {
+    border-left: black;
+    border-bottom-style: solid;
+    border-width: 2px;
 }
 
 .child-old {
@@ -104,6 +188,14 @@ h2 {
 
 .child-new {
     background-color: orange;
+}
+
+#gameCounter {
+    background-color: rgb(255, 255, 121);
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    
 }
 
 #rock {
@@ -116,6 +208,10 @@ h2 {
     background-size: 80%;
 
     border-radius: 30%;
+}
+
+#rock:hover {
+    background-color: white;
 }
 
 #paper {
