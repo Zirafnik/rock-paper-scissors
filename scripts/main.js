@@ -15,7 +15,8 @@ function playRound(playerSelection, computerSelection) {
     let computer= computerSelection.toLowerCase();
 
     let child2= document.createElement('span');
-    child2.textContent='player: ' + player + "\r\n";
+    child2.textContent=`ROUND ${roundCounter}` + '\r\n';
+    child2.textContent+='player: ' + player + "\r\n";
     child2.textContent+='computer: ' + computer;
     log.appendChild(child2);
 
@@ -44,6 +45,8 @@ getInputValue();
 let playerScore=0;
 let computerScore=0;
 
+let roundCounter=1;
+
 const buttons= document.querySelectorAll('.btn');
 buttons.forEach(button => button.addEventListener('click', play));
 
@@ -55,6 +58,8 @@ function play(e) {
 
     let result=playRound(e.target.id, computerRoll);
     child.textContent=result + "\r\n";
+
+    roundCounter+=1;
 
     if(/Win/.test(result)) {
         playerScore+=1;
@@ -86,6 +91,8 @@ function play(e) {
         playerScore=0;
         computerScore=0;
 
+        roundCounter=1;
+
     }
 }
 
@@ -100,6 +107,8 @@ function resetGame() {
 
     playerScore=0;
     computerScore=0;
+
+    roundCounter=1;
 }
 
 const inputSubmit= document.querySelector('#inputSubmit');
