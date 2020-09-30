@@ -105,17 +105,18 @@ function play(e) {
         nodelist[1].classList.toggle('child-new');
     }
 
+    //alert at gameover
     let msgEnd;
     if(playerScore==numberOfWins || computerScore==numberOfWins) {
         if(playerScore>computerScore) {
-            msgEnd='      ' + "YOU WON\r\n";
+            msgEnd='       ' + "YOU WON\r\n";
         } else if(playerScore<computerScore) {
-            msgEnd='      ' + "YOU LOST\r\n";
+            msgEnd='       ' + "YOU LOST\r\n";
         } else if(playerScore==computerScore) {
             msgEnd="YOU TIED\r\n";
         }
         
-        msgEnd+='           ' + `${playerScore}:${computerScore}` + '\r\n';
+        msgEnd+='            ' + `${playerScore}:${computerScore}` + '\r\n';
         msgEnd+=' ' + `Rounds played: ` + roundCounter;
         alert(msgEnd);
 
@@ -146,6 +147,7 @@ function resetGame() {
     addGameCounter();
 }
 
+//printing
 const printButton=document.querySelector('#print');
 printButton.addEventListener('click', printResult);
 

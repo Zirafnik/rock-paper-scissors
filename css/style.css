@@ -175,10 +175,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-#logTitle {
-    
-}
-
 h2 {
     font-family: 'Strait', sans-serif;
     font-size: 40px;
@@ -214,11 +210,13 @@ h2 {
     overflow-y: auto; 
     text-align:justify; 
 }
-
+/*allows me to print only div id=log over several pages; hides all other elements*/
 @media print {
     body * { visibility: hidden; }
     #log * { visibility: visible; }
     #log { position: absolute; top: 40px; left: 30px; }
+    * { overflow: visible !important; }
+    #log { page-break-after:always; }
 }
 
 span {
