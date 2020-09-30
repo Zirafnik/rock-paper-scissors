@@ -22,6 +22,8 @@ button {
     border-width: 5px;
     border-color: black;
     background-color: rgb(200, 200, 200);
+
+    outline: none;
 }
 
 button:hover {

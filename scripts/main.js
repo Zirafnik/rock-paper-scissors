@@ -108,14 +108,15 @@ function play(e) {
     let msgEnd;
     if(playerScore==numberOfWins || computerScore==numberOfWins) {
         if(playerScore>computerScore) {
-            msgEnd="YOU WIN\r\n";
+            msgEnd='      ' + "YOU WON\r\n";
         } else if(playerScore<computerScore) {
-            msgEnd="YOU LOSE\r\n";
+            msgEnd='      ' + "YOU LOST\r\n";
         } else if(playerScore==computerScore) {
-            msgEnd="TIE\r\n";
+            msgEnd="YOU TIED\r\n";
         }
         
-        msgEnd+=`${playerScore}:${computerScore}`;
+        msgEnd+='           ' + `${playerScore}:${computerScore}` + '\r\n';
+        msgEnd+=' ' + `Rounds played: ` + roundCounter;
         alert(msgEnd);
 
         playerScore=0;
