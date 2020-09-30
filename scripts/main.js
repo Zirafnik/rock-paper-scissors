@@ -145,3 +145,10 @@ function resetGame() {
     gameCounter=1;
     addGameCounter();
 }
+
+const printButton=document.querySelector('#print');
+printButton.addEventListener('click', printResult);
+
+function printResult() {
+    window.print();
+}

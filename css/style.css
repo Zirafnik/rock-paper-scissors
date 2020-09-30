@@ -131,19 +131,61 @@ h1 {
     margin-right: 25px;
 }
 
+#print {
+    height: 35px;
+    width: 35px;
+    
+    border-width: 0;
+    
+    position: absolute;
+    margin-left: 240px;
+
+    background: url('../images/printer.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+
+#print:hover {
+    background: url('../images/printer-inverted.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+
+#logUpper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    height: 70px;
+    width: 82%;
+    margin: 10px;
+
+    background-color: gainsboro;
+
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+
+    height: 70px;
+    margin: 30px;
+    margin-bottom: 20px;
+}
+
+#logTitle {
+    
+}
+
 h2 {
     font-family: 'Strait', sans-serif;
     font-size: 40px;
 
     text-align: center;
-    background-color: gainsboro;
-    padding: 10px;
-    width: 77%;
     
-    border-radius: 5px;
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
+    padding: 10px;
 
     margin-top: 30px;
 }
@@ -171,6 +213,12 @@ h2 {
     overflow-x: hidden; 
     overflow-y: auto; 
     text-align:justify; 
+}
+
+@media print {
+    body * { visibility: hidden; }
+    #log * { visibility: visible; }
+    #log { position: absolute; top: 40px; left: 30px; }
 }
 
 span {
