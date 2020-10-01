@@ -209,7 +209,9 @@ h2 {
     height: 90%; 
     overflow-x: hidden; 
     overflow-y: auto; 
-    text-align:justify; 
+    text-align:justify;
+    
+    box-shadow: 4px 4px 5px #555 inset;
 }
 /*allows me to print only div id=log over several pages; hides all other elements*/
 @media print {
