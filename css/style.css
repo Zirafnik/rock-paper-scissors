@@ -202,7 +202,6 @@ h2 {
     background-color: gainsboro;
 
     /*this makes it scrollable*/
-    /*margin:4px, 4px; */
     padding:4px; 
 
     width: 80%; 
@@ -211,7 +210,7 @@ h2 {
     overflow-y: auto; 
     text-align:justify;
     
-    box-shadow: 4px 4px 5px #555 inset;
+    /*box-shadow: 4px 4px 5px #555 inset;*/
 }
 /*allows me to print only div id=log over several pages; hides all other elements*/
 @media print {
