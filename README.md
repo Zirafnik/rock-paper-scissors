@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors!
 
+https://zirafnik.github.io/rock-paper-scissors/
+
 I made this project as a way to learn and practice DOM manipulations with event listeners. I added many more features than initially planned and am extremely proud of the end product.
 
 The additional features I added are: clear button, scrollbar, number of wins changer, print option and more. I managed to make the scrollbar follow down with the results with .scrollIntoView, as well as having the latest round color orange by toggling child classes.
